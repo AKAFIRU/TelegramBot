@@ -24,12 +24,16 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
 
         if (getMessageText().equals("/start")) {
             setUserGlory(0);
+
+            sendPhotoMessageAsync("step_1_pic");
             sendTextMessageAsync(STEP_1_TEXT,
                     Map.of("Hackear la nevera", "step_1_btn"));
         }
 
         if (getCallbackQueryButtonKey().equals("step_1_btn")) {
-            setUserGlory(20);
+            addUserGlory(20);
+
+            sendPhotoMessageAsync("step_2_pic");
             sendTextMessageAsync(STEP_2_TEXT,
                     Map.of("Tomar una salchicha +20 de fama", "step_2_btn",
                             "Tomar una pescado +20 de fama", "step_2_btn",
@@ -38,13 +42,17 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
         }
 
         if (getCallbackQueryButtonKey().equals("step_2_btn")) {
-            setUserGlory(20);
+            addUserGlory(20);
+
+            sendPhotoMessageAsync("step_3_pic");
             sendTextMessageAsync(STEP_3_TEXT,
                     Map.of("Romper al robot aspirado", "step_3_btn"));
         }
 
         if (getCallbackQueryButtonKey().equals("step_3_btn")) {
-            setUserGlory(30);
+            addUserGlory(30);
+
+            sendPhotoMessageAsync("step_4_pic");
             sendTextMessageAsync(STEP_4_TEXT,
                     Map.of("Enviar al robot aspirado por comida +30 de fama", "step_4_btn",
                             "Dar un paseo en el robot aspiradora", "step_4_btn",
@@ -52,12 +60,16 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
 
         }
         if (getCallbackQueryButtonKey().equals("step_4_btn")) {
-            setUserGlory(30);
+            addUserGlory(30);
+
+            sendPhotoMessageAsync("step_5_pic");
             sendTextMessageAsync(STEP_5_TEXT,
                     Map.of("Encender camara","step_5_btn"));
         }
         if (getCallbackQueryButtonKey().equals("step_5_btn")) {
-            setUserGlory(40);
+            addUserGlory(40);
+
+            sendPhotoMessageAsync("step_6_pic");
             sendTextMessageAsync(STEP_6_TEXT,
                     Map.of("Grabar la comida +40 de fama", "step_6_btn",
                             "Grabar al perro +40 de fama", "step_6_btn",
@@ -65,19 +77,23 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
         }
 
         if (getCallbackQueryButtonKey().equals("step_6_btn")) {
-            setUserGlory(50);
+            addUserGlory(50);
+
+            sendPhotoMessageAsync("step_7_pic");
             sendTextMessageAsync(STEP_7_TEXT,
                     Map.of("Hackea la contraseña de la computadora", "step_7_btn"));
         }
 
         if (getCallbackQueryButtonKey().equals("step_7_btn")) {
-            setUserGlory(50);
+            addUserGlory(50);
+
+            sendPhotoMessageAsync("step_8_pic");
             sendTextMessageAsync(STEP_8_TEXT,
                     Map.of("Sube el video a youtube", "step_8_btn"));
         }
 
         if (getCallbackQueryButtonKey().equals("step_8_btn")) {
-            setUserGlory(60);
+            addUserGlory(60);
             sendTextMessageAsync(FINAL_TEXT,
                     Map.of());
         }
